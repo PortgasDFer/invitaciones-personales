@@ -1,0 +1,177 @@
+.envelope-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 55px;
+    perspective: 1000px;
+}
+
+.envelope-caption {
+    font-family: var(--font-heading);
+    font-size: 19px;
+    font-style: italic;
+    color: var(--color-white);
+    margin-bottom: 22px;
+    letter-spacing: 0.5px;
+}
+
+.envelope-button {
+    position: relative;
+    width: min(180px, 55vw);
+    aspect-ratio: 180 / 115;
+    height: auto;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.envelope {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+/* Fondo del sobre */
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+    background: #505143;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+/* Tarjeta interior */
+
+.envelope-letter {
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    left: 7.5%;
+    top: 5%;
+    background: #E8E2DC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #505143;
+    z-index: 2;
+    transition: transform 1s ease, opacity 0.6s ease;
+}
+
+.envelope-letter span {
+    font-family: var(--font-heading);
+    font-size: 22px;
+}
+
+.envelope-letter small {
+    font-family: var(--font-body);
+    font-size: 8px;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+/* Solapa superior */
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 90px solid transparent;
+    border-right: 90px solid transparent;
+    border-top: 72px solid #777765;
+    transform-origin: top center;
+    transition: transform 0.8s ease;
+    z-index: 5;
+}
+
+/* Frente del sobre */
+
+.envelope-front {
+    position: absolute;
+    inset: 0;
+    background: #646453;
+    clip-path: polygon(
+        0 0,
+        50% 58%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+    z-index: 4;
+}
+
+/* Lacre */
+
+.envelope-seal {
+    position: absolute;
+    width: 43px;
+    height: 43px;
+    background: #A96D51;
+    border: 2px solid #D5B18B;
+    border-radius: 50%;
+    left: 50%;
+    top: 48%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    color: #F2E8D9;
+    font-family: var(--font-heading);
+    font-size: 13px;
+    z-index: 6;
+    box-shadow: 0 2px 8px #00000035;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.envelope-seal i {
+    font-size: 10px;
+}
+
+/* Interacción */
+
+.envelope-button:not(:disabled):hover {
+    transform: translateY(-4px);
+}
+
+.envelope-button {
+    transition: transform 0.3s ease;
+}
+
+.envelope-button.opening .envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope-button.opening .envelope-seal {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+}
+
+.envelope-button.opening .envelope-letter {
+    transform: translateY(-75px);
+    transition-delay: 0.5s;
+}
+
+.envelope-instruction {
+    margin-top: 17px;
+    font-family: var(--font-body);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #FFFFFFCC;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .envelope-flap,
+    .envelope-letter,
+    .envelope-seal {
+        transition-duration: 0.01ms !important;
+    }
+}

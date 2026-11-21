@@ -1,0 +1,11 @@
+:root {
+  --color-olive: #505143;
+  --color-sage: #A6A799;
+  --color-terracotta: #A96D51;
+  --color-gold: #A38D61;
+  --color-ivory: #DADAD2;
+  --color-white: #FFFFFF;
+
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
