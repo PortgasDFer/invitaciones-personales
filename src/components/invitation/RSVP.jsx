@@ -223,8 +223,19 @@ function RSVP() {
                                 type="tel"
                                 name="phone"
                                 value={form.phone}
-                                onChange={handleChange}
-                                maxLength={20}
+                                onChange={(e) => {
+                                    const value = e.target.value.replace(/\D/g, '').slice(0, 10);
+
+                                    setForm(prev => ({
+                                        ...prev,
+                                        phone: value
+                                    }));
+                                }}
+                                inputMode="numeric"
+                                pattern="[0-9]{10}"
+                                maxLength={10}
+                                minLength={10}
+                                required
                                 placeholder="Tu número de teléfono"
                                 className="w-full border border-[#DADAD2]/30 bg-transparent px-4 py-4 text-sm text-white outline-none placeholder:text-[#DADAD2]/50 focus:border-[#C5B58D]"
                             />
