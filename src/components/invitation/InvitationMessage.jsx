@@ -1,4 +1,5 @@
 import { Heart } from 'lucide-react';
+import { invitationImages } from '../../config/invitationImages';
 
 function InvitationMessage() {
     return (
@@ -47,7 +48,17 @@ function InvitationMessage() {
                 <p className="mt-8 font-serif text-2xl italic text-[#A96D51]">
                     ¡Celebra con nosotros este día tan maravilloso!
                 </p>
+                
 
+                {/* Fotografía de los novios */}
+                <div className="mx-auto mt-16 max-w-md">
+                    <img
+                        src={invitationImages.bride}
+                        alt="Eli y Will"
+                        loading="lazy"
+                        className="h-auto w-full object-cover"
+                    />
+                </div>
             </div>
 
             {/* Versículo bíblico */}

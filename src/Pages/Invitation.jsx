@@ -4,6 +4,7 @@ import EventDetails from '../components/invitation/EventDetails';
 import DressCode from '../components/invitation/DressCode';
 import RSVP from '../components/invitation/RSVP';
 import Parents from '../components/invitation/Parents';
+import Gallery from '../components/invitation/Gallery';
 
 function Invitation() {
     return (
@@ -11,6 +12,7 @@ function Invitation() {
             <Hero />
             <InvitationMessage />
             <Parents />
+            <Gallery />
             <EventDetails />
             <DressCode />
             <RSVP />

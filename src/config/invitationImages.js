@@ -1,5 +1,12 @@
 export const invitationImages = {
-    hero: 'https://images.pexels.com/photos/36723082/pexels-photo-36723082/free-photo-of-romantic-outdoor-wedding-in-lush-garden-setting.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    hero: `${import.meta.env.BASE_URL}images/eli-will-hero.webp`,
 
-    bride: 'https://images.pexels.com/photos/16426620/pexels-photo-16426620/free-photo-of-bride-in-garden.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    bride: `${import.meta.env.BASE_URL}images/eli-will-bride.webp`,
+
+    gallery: [
+        `${import.meta.env.BASE_URL}images/eli-will-01.webp`,
+        `${import.meta.env.BASE_URL}images/eli-will-02.webp`,
+        `${import.meta.env.BASE_URL}images/eli-will-03.webp`,
+        `${import.meta.env.BASE_URL}images/eli-will-04.webp`,
+    ],
 };
