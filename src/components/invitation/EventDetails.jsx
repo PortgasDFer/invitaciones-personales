@@ -37,7 +37,7 @@ function EventDetails() {
     ];
 
     return (
-        <section className="bg-[#E8E2DC] px-6 py-24">
+        <section className="bg-white px-6 py-24">
 
             <div className="mx-auto max-w-lg text-center">
 

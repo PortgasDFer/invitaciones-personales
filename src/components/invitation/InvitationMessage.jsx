@@ -5,7 +5,7 @@ function InvitationMessage() {
     return (
         <section
             id="invitation"
-            className="overflow-hidden bg-[#DADAD2] px-7 py-20"
+            className="overflow-hidden bg-white px-7 py-20"
         >
             <div className="mx-auto max-w-lg text-center">
 

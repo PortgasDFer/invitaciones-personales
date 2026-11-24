@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Music2, Play, Pause } from 'lucide-react';
+import { Music2, Pause } from 'lucide-react';
 
 function BackgroundMusic() {
     const audioRef = useRef(null);
@@ -12,10 +12,21 @@ function BackgroundMusic() {
 
         audio.volume = 0.35;
 
-        audio.play()
-            .then(() => setPlaying(true))
-            .catch(() => setPlaying(false));
+        const handleInvitationOpened = async () => {
+            try {
+                await audio.play();
+                setPlaying(true);
+            } catch (error) {
+                console.error('No se pudo reproducir el audio:', error);
+                setPlaying(false);
+            }
+        };
 
+        window.addEventListener('invitation:opened', handleInvitationOpened);
+
+        return () => {
+            window.removeEventListener('invitation:opened', handleInvitationOpened);
+        };
     }, []);
 
     const toggleMusic = async () => {
@@ -43,6 +54,8 @@ function BackgroundMusic() {
                 src={`${import.meta.env.BASE_URL}audio/sound.mp3`}
                 loop
                 preload="auto"
+                onPlay={() => setPlaying(true)}
+                onPause={() => setPlaying(false)}
             />
 
             <button
@@ -50,11 +63,7 @@ function BackgroundMusic() {
                 aria-label={playing ? 'Pausar música' : 'Reproducir música'}
                 className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-[#A38D61] bg-[#505143] text-[#E8E2DC] shadow-lg transition-transform hover:scale-110"
             >
-                {playing ? (
-                    <Pause size={19} />
-                ) : (
-                    <Play size={19} />
-                )}
+                {playing ? <Pause size={19} /> : <Music2 size={19} />}
             </button>
         </>
     );

@@ -9,6 +9,9 @@ function Envelope() {
 
         setIsOpening(true);
 
+        // Iniciar música al abrir la invitación
+        window.dispatchEvent(new Event('invitation:opened'));
+
         setTimeout(() => {
             const section = document.getElementById('invitation');
 
