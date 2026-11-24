@@ -5,10 +5,12 @@ import DressCode from '../components/invitation/DressCode';
 import RSVP from '../components/invitation/RSVP';
 import Parents from '../components/invitation/Parents';
 import Gallery from '../components/invitation/Gallery';
+import BackgroundMusic from '../components/invitation/BackgroundMusic';
 
 function Invitation() {
     return (
         <main>
+            <BackgroundMusic />
             <Hero />
             <InvitationMessage />
             <Parents />

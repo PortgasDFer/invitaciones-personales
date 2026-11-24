@@ -4,9 +4,7 @@ export const invitationImages = {
     bride: `${import.meta.env.BASE_URL}images/eli-will-bride.webp`,
 
     gallery: [
-        `${import.meta.env.BASE_URL}images/eli-will-01.webp`,
         `${import.meta.env.BASE_URL}images/eli-will-02.webp`,
         `${import.meta.env.BASE_URL}images/eli-will-03.webp`,
-        `${import.meta.env.BASE_URL}images/eli-will-04.webp`,
     ],
 };
