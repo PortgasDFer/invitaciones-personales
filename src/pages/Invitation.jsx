@@ -6,6 +6,7 @@ import RSVP from '../components/invitation/RSVP';
 import Parents from '../components/invitation/Parents';
 import Gallery from '../components/invitation/Gallery';
 import BackgroundMusic from '../components/invitation/BackgroundMusic';
+import Gifts from '../components/invitation/Gifts';
 
 function Invitation() {
     return (
@@ -17,6 +18,7 @@ function Invitation() {
             <Gallery />
             <EventDetails />
             <DressCode />
+            <Gifts />
             <RSVP />
         </main>
     );
